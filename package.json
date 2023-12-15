@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "start-api": "yarn dev",
+    "start-api": "npm run dev",
     "heroku-prebuild": "npm run start-api",
     "heroku-postbuild": "npm run build && npm run start"
   },
