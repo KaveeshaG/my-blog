@@ -13,17 +13,11 @@ export const GET = async (req) => {
   const query = {
     take: POST_PER_PAGE,
     skip: POST_PER_PAGE * (page - 1),
+    orderBy: { createdAt: 'desc' },
     where: {
       ...(cat && { catSlug: cat }),
     },
   };
-
-
-
-
-
-
-  
   
   try {
     const [posts, count] = await prisma.$transaction([
@@ -38,15 +32,6 @@ export const GET = async (req) => {
     );
   }
 };
-
-
-
-
-
-
-
-
-
 
 // CREATE A POST
 export const POST = async (req) => {
